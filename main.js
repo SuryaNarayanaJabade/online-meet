@@ -118,9 +118,3 @@ function addRemoteVideo(peerId, stream) {
   video.srcObject = stream;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const startVideoButton = document.getElementById('startVideoButton');
-  if (startVideoButton) {
-    startVideoButton.addEventListener('click', startLocalVideo);
-  }
-});
