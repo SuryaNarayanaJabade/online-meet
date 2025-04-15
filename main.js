@@ -16,6 +16,7 @@ function joinRoom() {
 }
 
 function startLocalVideo() {
+  if (window.isSecureContext) {
     console.log('Attempting to access webcam and microphone...');
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then(stream => {
@@ -27,7 +28,11 @@ function startLocalVideo() {
         console.error('Failed to access webcam/mic:', err);
         alert('Error accessing webcam/microphone. Please check your browser permissions.');
       });
+  } else {
+    alert('This page must be served via HTTPS or localhost to access camera/mic.');
   }
+}
+
   
 
 socket.on('new-peer', (peerId) => {
