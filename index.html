@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebRTC Socket.IO Demo</title>
+</head>
+<body>
+  <h1>WebRTC Multi-Room Demo</h1>
+  <input type="text" id="roomId" placeholder="Enter Room ID (1 or 2)">
+  <button onclick="joinRoom()">Join Room</button>
+
+  <button onclick="startLocalVideo()">Start Camera</button>
+
+  <h2>Local Video</h2>
+  <video id="localVideo" autoplay muted playsinline></video>
+
+  <h2>Remote Videos</h2>
+  <div id="remoteVideos"></div>
+
+  <script src="https://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
